@@ -1,0 +1,33 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1e1e1e;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  color: #ffcc00;
+}
+
+#group-creation, #group-link {
+  margin: 20px;
+}
+
+#group-link input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px;
+  background-color: #ffcc00;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #e5a900;
+}

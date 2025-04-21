@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vũ Trụ Nghề Nghiệp Nhị Phân</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Vũ Trụ Nghề Nghiệp Nhị Phân</h1>
+
+  <div id="group-creation">
+    <h2>Tạo nhóm mới</h2>
+    <input type="text" id="group-name" placeholder="Tên nhóm">
+    <button onclick="createGroup()">Tạo nhóm</button>
+  </div>
+
+  <div id="group-link" style="display: none;">
+    <h2>Liên kết nhóm</h2>
+    <input type="text" id="group-link-input" readonly>
+    <p>Chia sẻ liên kết nhóm cho các thành viên khác để tham gia nhóm và nhập nghề nghiệp.</p>
+  </div>
+
+  <script src="firebase-config.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
