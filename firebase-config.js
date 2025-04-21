@@ -1,7 +1,4 @@
-// Firebase v9 trở lên sử dụng cú pháp này
-import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
-
+// firebase-config.js
 const firebaseConfig = {
   apiKey: "AIzaSyBtO7yMF8yhTkTv3faN0u1oNyJ0KpaBnsA",
   authDomain: "vu-tru-nghe-nghiep.firebaseapp.com",
@@ -13,11 +10,11 @@ const firebaseConfig = {
   measurementId: "G-3QDN201BBD"
 };
 
-// Khởi tạo Firebase
-const app = initializeApp(firebaseConfig);
+// Initialize Firebase
+const app = firebase.initializeApp(firebaseConfig);
 
-// Lấy instance của Firestore
-const db = getFirestore(app);
+// Get Firestore instance
+const db = firebase.firestore(app);
 
-// Xuất db để sử dụng trong các file khác
+// Export the db object
 export { db };
