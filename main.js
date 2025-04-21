@@ -7,15 +7,15 @@ let groupID = null;
 function createGroup() {
   const groupName = document.getElementById('group-name').value.trim();
   if (groupName) {
-    const groupRef = collection(db, 'groups');
-    addDoc(groupRef, {
+    const groupRef = db.collection('groups');
+    groupRef.add({
       name: groupName,
-      careers: {},
+      careers: {}, // Mảng nghề nghiệp ban đầu rỗng
     }).then(docRef => {
       groupID = docRef.id;
       const groupLink = `${window.location.href}?groupID=${groupID}`;
       document.getElementById('group-link-input').value = groupLink;
-      document.getElementById('group-link').style.display = 'block';
+      document.getElementById('group-link').style.display = 'block'; // Hiển thị liên kết nhóm
       alert("Nhóm đã được tạo! Chia sẻ liên kết nhóm cho các thành viên khác.");
     }).catch(error => {
       alert("Đã xảy ra lỗi khi tạo nhóm: " + error.message);
