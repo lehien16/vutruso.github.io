@@ -1,5 +1,5 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
-import { getDatabase } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js";
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 const firebaseConfig = {
   apiKey: "AIzaSyBtO7yMF8yhTkTv3faN0u1oNyJ0KpaBnsA",
   authDomain: "vu-tru-nghe-nghiep.firebaseapp.com",
@@ -10,5 +10,11 @@ const firebaseConfig = {
   appId: "1:248626863436:web:00362f550042ef8dd743e9",
   measurementId: "G-3QDN201BBD"
 };
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
+// Khởi tạo Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Lấy instance của Firestore
+const db = firebase.firestore();
+
+// Xuất db để sử dụng trong các file khác
+export { db };
