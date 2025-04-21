@@ -1,5 +1,5 @@
+// main.js
 import { db } from './firebase-config.js';
-import { collection, addDoc } from 'firebase/firestore';
 
 let groupID = null;
 
@@ -7,17 +7,15 @@ let groupID = null;
 function createGroup() {
   const groupName = document.getElementById('group-name').value.trim();
   if (groupName) {
-    // Thêm nhóm mới vào Firestore
-    const groupRef = collection(db, 'groups');  // Lấy collection 'groups'
+    const groupRef = collection(db, 'groups');
     addDoc(groupRef, {
       name: groupName,
-      careers: {}, // Mảng nghề nghiệp ban đầu rỗng
+      careers: {},
     }).then(docRef => {
       groupID = docRef.id;
-      // Hiển thị liên kết nhóm
       const groupLink = `${window.location.href}?groupID=${groupID}`;
       document.getElementById('group-link-input').value = groupLink;
-      document.getElementById('group-link').style.display = 'block';  // Hiển thị liên kết nhóm
+      document.getElementById('group-link').style.display = 'block';
       alert("Nhóm đã được tạo! Chia sẻ liên kết nhóm cho các thành viên khác.");
     }).catch(error => {
       alert("Đã xảy ra lỗi khi tạo nhóm: " + error.message);
