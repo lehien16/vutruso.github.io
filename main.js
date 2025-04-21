@@ -1,3 +1,5 @@
+import { db } from './firebase-config.js';
+
 let groupID = null;
 
 // Tạo nhóm mới
