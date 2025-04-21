@@ -1,4 +1,5 @@
 import { db } from './firebase-config.js';
+import { collection, addDoc } from 'firebase/firestore';
 
 let groupID = null;
 
@@ -7,7 +8,8 @@ function createGroup() {
   const groupName = document.getElementById('group-name').value.trim();
   if (groupName) {
     // Thêm nhóm mới vào Firestore
-    const groupRef = db.collection('groups').add({
+    const groupRef = collection(db, 'groups');  // Lấy collection 'groups'
+    addDoc(groupRef, {
       name: groupName,
       careers: {}, // Mảng nghề nghiệp ban đầu rỗng
     }).then(docRef => {
